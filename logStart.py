@@ -10,7 +10,7 @@ names = {}
 
 
 
-
+# get the players names from the uuids
 def pop_players():
     path = serverPath + "world\\playerdata\\"
     username = []
@@ -31,7 +31,7 @@ def pop_players():
                         username.append(uuid)
             
 
-
+#check if logger is already running
 def loggerRunning():
     currtime = int(time.time())
     loggertime = int(os.path.getmtime(logPath + "timestamp"))
@@ -40,6 +40,7 @@ def loggerRunning():
     else:
         return 0
 
+#start the logger
 def startLogger():
     if not os.path.exists(logPath):# make playerdata folder here. check if it was successfull
         try:
